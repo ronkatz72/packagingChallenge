@@ -1,6 +1,5 @@
-
+  Author ron.katz72@gmail.com
   
-  Author ron.katz72@gmail.com*
   Package Challenge
   
   This program accept as its first argument a path to a filename.
