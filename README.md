@@ -5,28 +5,31 @@
   This program accept as its first argument a path to a filename.
   The input file contains several lines, each representing a test case.
  
-  Line structure: "Capacity : (id1,w1,Sc1) (id2,w2,Sc2) ... (idn,wn,Scn)
+  Line structure: "Capacity : (id1,w1,Sc1) (id2,w2,Sc2) ... (idn,wn,Scn)"
   
-  Where: Capacity is the capacity of the package
+  Where: Capacity is the capacity of the package (its maximal allowed weight)
          idm is the mth item's id - integer
          wm  is the mth item's weight - float (see below about its precision)
          S   is the currency sign of the cost (must be the same for all items)
          cm  is the mth item's cost - integer
          
    Output: The program return a String with line per each input line.
-   		for each set of items with a capacity the respective line in the output
-   		includes the selected items that we choose to put into the box such that
-           the items will me with minimum weight and maximum value.
+   		     for each set of items with a capacity the respective line in the output,
+   		     includes the selected items that we choose to put into the box such that
+           the items will be with minimum weight and maximum value.
+           
            Example: 100 : (1,100.00,$40) (2,100.00,$50) (3,50.00 $100) (4,50.00,$100)
-           will return : 3,4 since those two items together weight 100$ but their cumulative value is 200$
+           will return : 3,4 since those two items together weight 100 but their cumulative value is 200$
+           if items 1 or 2 were selected the weight of the package will be 100 as well, but its value will be less.
           
    In case no item can be added to the packe
    as in the following example input:
    100 : (1,200.00,$50)
+   item's weight is higher than the maximum capacity,
    The result output line will include only a hyphen (-) 
            
    Exception: In case input is not valid, com.mobiquityinc.excption.APIException is being thrown.
-   
+
    Constraints:
    
    MAX WEIGHT              = 100
@@ -34,7 +37,7 @@
  	 MAX PACKAGE CAPACITY    = 100
  
    The program can be used by calling com.mobiquityinc.packer.Packer static method:
- 	 String pack(String filepath);
+ 	    String pack(String filepath);
  	 Where filepath is an absolute file path to the input file
    The method return the results as a String as explained above.
     
