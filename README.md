@@ -99,6 +99,6 @@
  
   To test the build one can run the following command:
  
-  java -jar .\target\packageChalange-mobiquity-chalange-1.0.jar <full file path>
+  java -jar .\target\packageChalange-mobiquity-chalange-1.0.jar [full file path]
   
   (example input file is available)
