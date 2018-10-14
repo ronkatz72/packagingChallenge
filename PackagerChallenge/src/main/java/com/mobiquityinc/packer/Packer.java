@@ -26,7 +26,7 @@ import com.mobiquityinc.packer.stratetgy.KnapSackPackagingStrategy;
  * This program accept as its first argument a path to a filename.
  * The input file contains several lines, each representing a test case.
  * 
- * Line structure: "Capacity : (id1,w1,Sc1) (id2,w2,Sc2) ... (idn,wn,Scn)
+ * Line structure: "Capacity : (id1,w1,Sc1) (id2,w2,Sc2) ... (idn,wn,Scn)"
  * 
  * Where: Capacity is the capacity of the package
  *        idm is the mth item's id - integer
@@ -38,8 +38,10 @@ import com.mobiquityinc.packer.stratetgy.KnapSackPackagingStrategy;
  *  		for each set of items with a capacity the respective line in the output
  *  		includes the selected items that we choose to put into the box such that
  *          the items will me with minimum weight and maximum value.
- *          Example: 100 : (1,100.00,$40) (2,100.00,$50) (3,50.00 $100) (4,50.00,$100)
- *          will return : 3,4 since those two items together weight 100$ but their cumulative value is 200$
+ *          Example: 
+ *		100 : (1,100.00,$40) (2,100.00,$50) (3,50.00 $100) (4,50.00,$100)
+ *          	will return : 3,4 since those two items together weight 100 but their cumulative value is 200$
+ *              Choosing item1 or item2 will result in same package weight but its value will be less than 200$
  *          
  *          In case no item can be added to the packe
  *          as in the following example input:
@@ -54,9 +56,9 @@ import com.mobiquityinc.packer.stratetgy.KnapSackPackagingStrategy;
  *	 MAX ITEMS NUMBER        =  15
  *	 MAX PACKAGE CAPACITY    = 100
  *
- *	 The program can be used by calling com.mobiquityinc.packer.Packer static method:
+ *   The program can be used by calling com.mobiquityinc.packer.Packer static method:
  *	 String pack(String filepath);
- *	 Where filepath is an absolute file path to the input file
+ *   Where filepath is an absolute file path to the input file
  *   The method return the results as a String as explained above.
  *   
  *   Solution:
@@ -136,7 +138,7 @@ public class Packer {
 	private String process(){
 		InputStreamReader inputStream = null;
 		try {
-			// by using UTF-8 encoding we can handle signs such as '€'
+			// by using UTF-8 encoding we can handle signs such as 'â‚¬'
 			inputStream = new InputStreamReader(new FileInputStream(filePath), "UTF-8");
 		} catch (UnsupportedEncodingException | FileNotFoundException e) {
 			e.printStackTrace();
