@@ -91,7 +91,11 @@
          n = number of items.
    
   Build:
-  		Standard maven - use 'mvn clean install' from root directory
+  		Standard maven - use 'mvn clean install' from root directory:
+      <your folder>\packagingChallenge-master\PackageCahllenge
+  
+      maven 3.5.4 & java 8 were used for developing
+      
  
   To test the build one can run the following command:
  
